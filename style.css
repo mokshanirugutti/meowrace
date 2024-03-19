@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-color: white;
+}
+body.dark {
+  background-color: black;
+  transition: all 0.4s ease-in-out;
+  color: #fff;
+}
+#nav {
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#nav h1{
+  font-size: 20px;
+  font-weight: 700;
+
+}
+#nav #logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+}
+.ri-menu-line{
+  display: none;
+}
+#nav img{
+  height: 60px;
+}
+#nav #routes {
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  gap: 20px;
+  
+}
+.nav-routes a{
+  text-decoration: none;
+  color: black;
+  text-transform: capitalize;
+  transition: all 0.4s ease-in-out;
+}
+.nav-routes.dark a{
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+}
+
+.toogle{
+  position: relative;
+  height: 25px;
+  width: 50px;
+  background-color: aquamarine;
+  border-radius: 200px;
+  box-shadow : 0 5px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+}
+
+.toogle::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  top:8%;
+  left:5px;
+  transition: all 0.4s ease-in-out;
+  
+}
+
+.toogle.active::before{
+  background: black;
+  left : calc(100% - 25px  );
+}
+
+#hero {
+  width: 100%;
+  height: 420px;
+  display: flex;
+  align-items: start;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+#left-hero{
+  flex-basis: 20%;
+  border-radius: 10px;
+}
+#feed-hero {
+  flex-basis: 50%;
+  height: 33rem; 
+  overflow: hidden;
+  overflow-y: scroll ;
+}
+
+#feed-hero::-webkit-scrollbar {
+  display: none;
+
+}
+#profile-headers {
+  display: flex;
+  align-items: center;
+}
+
+.profiles #profile-headers img {
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #4449;
+  padding: 6px;
+  margin: 5px;
+}
+.hero-headings {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.feed-profiles{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2px;
+  margin: 2px;
+}
+#groups {
+  width: 9rem;
+}
+#groups ul{
+  padding:2px 20px;
+  font-size: 16px;
+}
+.profiles #profile-content img{
+  width: 43dvw;
+  height: 40dvw;
+  border-radius: 10px;
+  margin-left: 7px;
+}
+#right-hero{
+  flex-basis: 20%;
+  height: 25rem; 
+}
+
+@media screen and (max-width:500px){
+  .nav-routes a {
+    display: none;
+  }
+  .ri-menu-line{
+    display: inline;
+  }
+  #right-hero{
+    display: none;
+  }
+  #left-hero{
+    display: none;
+  }
+
+}
